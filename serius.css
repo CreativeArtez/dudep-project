@@ -735,13 +735,13 @@ button:hover .jempol{
     }
     
     .reveal{
-        font-size: 5.5em;
+        font-size: 4em;
     }
     .-j{
-        font-size: 6em;
+        font-size: 4em;
     }
     .counter{
-        font-size: 4em;
+        font-size: 3em;
     }
     .apresiasi{
         display: block;
@@ -898,15 +898,6 @@ button:hover .jempol{
         font-size: 0.7em;
     }
     
-    .reveal{
-        font-size: 5.5em;
-    }
-    .-j{
-        font-size: 5em;
-    }
-    .counter{
-        font-size: 3em;
-    }
     .apresiasi{
         display: block;
     }
