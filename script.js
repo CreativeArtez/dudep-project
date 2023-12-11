@@ -72,13 +72,14 @@ gsap.from('.mouse', 1,{
 function All () {
 
   //preloader
-  const preloader = gsap.timeline();
+
   jQuery(document).ready(function( $ ) {
     $('.counter-two').counterUp({
         time: 2000
     });
   });
-  
+
+    const preloader = gsap.timeline();
   preloader.to('.counter-two', {
     delay: 3.5,
     opacity:0,
