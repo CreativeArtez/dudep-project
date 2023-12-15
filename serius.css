@@ -24,7 +24,7 @@ body{
     top: 0;
     width: 100px;
     height: 100px;
-    z-index: 10;
+    z-index: 260;
 }
 .mouse{
     position: fixed;
@@ -32,7 +32,7 @@ body{
     top: 0;
     width: 35px;
     height: 35px;
-    z-index: 1;
+    z-index: 260;
     display: flex;
     transition: scale 0.3s ease;
 }
@@ -46,35 +46,42 @@ body{
 
 /* untuk prloader*/
 .preloader{
-    position: fixed;
+    font-family: 'Syne',sans-serif;
     width: 100%;
     height: 100vh;
-    z-index: 102;
-    background-color: #ffffff;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    z-index: 400;
     display: flex;
+    cursor: default;
 }
-.bg-pre{
-    position: absolute;
+.text-wrapper{
+    margin: auto;
+}
+.bg{
     width: 100%;
     height: 100%;
-    background-color: #232323;
-}
-.counter-two{
-    font-family: 'Vina Sans', sans-serif;
-    margin: auto;
     position: absolute;
-    font-size: 6em;
-    letter-spacing: 2px;
-    z-index: 200;
-    color: greenyellow;
-    top: -10px;
-    left: 10px;
+    background-color: rgb(21, 21, 21);
 }
+.text-wrapper h1{
+    z-index: 1;
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
+    line-height: 0;
+
+    &:nth-of-type(5){
+        color: rgb(255, 145, 0);
+    }
+}
+
 
 /* untuk navbar*/
 .menu{
-  
-    z-index: 100;
+    cursor: pointer;
+    z-index: 310;
     width: 2.6em;
     height: 2em;
     position: fixed;
@@ -86,16 +93,18 @@ body{
 .line-nav{
     width: 90%;
     height: 3px;
-    border-radius: 10px;
     background-color: rgb(0, 0, 0);
     margin: auto;
 }
 .line-nav:nth-child(2n){
-    width: 50%;
+    clip-path: polygon(0 0, 70% 0, 70% 100%, 0% 100%);
+}
+.line-nav:nth-child(3n){
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%);
 }
 .bg-nav{
     font-family:'Cinzel', serif;
-    z-index: 90;
+    z-index: 300;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -103,35 +112,49 @@ body{
     display: none;
 }
 .bg-nav-two{
+    border-radius: 10px;
+    margin: auto;
+    cursor: default;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
     background-color:  rgb(82, 249, 127); 
     z-index: -1;
-    position: absolute;
+
 }
 .char{
     height: min-content;
     top: 0;
     padding: 0;
     margin: 0;
+
 }
 nav{
+
     display: flex;
-    flex-wrap: wrap;
     margin: auto;
     width: 70%;
     height: 40%;
     margin-top: 120px;
 }
+ul{
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
 li{ 
+    position: relative;
+    cursor: pointer;
     width: 100%;
     height: auto;
     margin: auto;
     display: flex;
     overflow: hidden;
 }
+
 .nav{
     margin: auto;
     list-style: none;
@@ -139,7 +162,7 @@ li{
     font-size:3em;
     letter-spacing: 3px;
     font-weight: 400;
-    color: rgb(0, 0, 0);
+    color: black;
 }
 .cp-ku{
     margin: auto;
@@ -163,7 +186,18 @@ li{
    margin: auto;
    display: flex;
     cursor: pointer;
-   .img-hv{
+
+   
+}
+.place-img{
+    object-fit: cover;
+    margin: auto;
+    display: flex;
+    width: 90%;
+    height: 90%;
+    position: relative;
+}
+.img-hv{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -171,7 +205,27 @@ li{
     z-index: -1;
     top: 0;
     left: 0;   
+
 }
+.tombol{
+    cursor: pointer;
+    z-index: 10;
+    background-color: transparent;
+    width: 10%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.tombol-kanan{
+    background-color: transparent;
+    right: 0;
+    cursor: pointer;
+    z-index: 10;
+    width: 10%;
+    height: 100vh;
+    top: 0;
+    position: absolute;
 }
 /* untuk kelas desc & visi */
 .bg-color{
@@ -303,7 +357,7 @@ li{
 .inf{
     width: 100%;
     height: 20%;
-    z-index: 10;
+    z-index: 270;
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -481,6 +535,7 @@ h2,.counter{
 }
 
 .swipper{
+    z-index: 299;
     top: 25%;
    right: 0;
     position: absolute;
@@ -488,6 +543,7 @@ h2,.counter{
     height: max-content;
 }
 .swiper {
+
     width:  28vw;
     height: 35vw;
 }
@@ -546,6 +602,7 @@ form{
     position: relative;
 }
 input{
+    z-index: 299;
     font-family: 'Cinzel', serif;
     font-weight: bolder;
     margin: auto;
@@ -558,6 +615,7 @@ input{
     font-size: 1.5em;
 }
 button{
+    z-index: 299;
     top: 5%;
     border-radius: 50% ;
     border: none;
@@ -569,13 +627,14 @@ button{
     background-color: aqua;
     border: 1px solid black;
     display: flex;
-    transition: 0.2s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 button:hover{
     background-color: rgb(219, 150, 219);
 }
 button:hover .jempol{
-   color: rgb(255, 255, 255);
+    transition: 0.5s ease-in-out;
+   scale: 0.8;
 }
 .jempol{
     margin: auto;
@@ -583,12 +642,23 @@ button:hover .jempol{
 }
 
 .maps{
+    position: relative;
     display: flex;
     width: 80%;
     height: 80%;
     margin: auto;
 }
+iframe{
+    z-index: 299;
+    width: 65%;
+    left: 5.7%;
+    border-radius: 50%;
+    top: 13%;
+    height: 55%;
+    position: absolute;
+}
 .awe{
+
     margin: auto;
     width: 95%;
     height: 80%;
@@ -655,6 +725,23 @@ button:hover .jempol{
 /* untuk tablet responsive */  
 /* untuk mobile responsive*/
 @media screen and (max-width:425px){
+    .text-wrapper h1{
+        font-size:1.3em;
+    
+        &:nth-of-type(5){
+            color: rgb(0, 218, 29);
+        }
+    }
+    .menu{
+
+        width: 1.8em;
+        height: 1.2em;
+    top: 7px;
+    left: 7px;
+}
+    .tombol,.tombol-kanan{
+        display: none;
+    }
     .mouse,.mouse-delay{
         display: none;
     }
@@ -675,7 +762,6 @@ button:hover .jempol{
     }
     
     h2{ 
-        
         font-size: 3em;
         color: white;
         margin: 0;    
@@ -805,10 +891,7 @@ button:hover .jempol{
     transform: translateY(-70px);
     width: 90%;
 }
-.menu{
-    top: 10px;
-    left: 10px;
-}
+
 .nav{
     font-size: 1.5em;
 }
@@ -823,10 +906,13 @@ button:hover .jempol{
     margin: auto;
     font-size: 1.3em;
 }
-
+iframe{
+ 
+    top: -8%;
+   
 
 }
-
+}  
 @media screen and (max-width:325px){
     .text{
         font-size: 1.5em;
@@ -897,7 +983,9 @@ button:hover .jempol{
         line-height: 20px;
         font-size: 0.7em;
     }
-    
+    .counter{
+        font-size: 3em;
+    }
     .apresiasi{
         display: block;
     }
@@ -952,10 +1040,6 @@ button:hover .jempol{
         transform: translateY(-70px);
         font-size: 18em;
     }
-    .menu{
-        top: 10px;
-        left: 10px;
-    }
     .nav{
         font-size: 1.4em;
     }
@@ -969,4 +1053,4 @@ button:hover .jempol{
         transform: translateY(-70px);
         width: 100%;
     }
-}    
+}  
