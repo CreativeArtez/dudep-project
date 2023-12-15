@@ -73,28 +73,40 @@ function All () {
 
   //preloader
 
-  jQuery(document).ready(function( $ ) {
-    $('.counter-two').counterUp({
-        time: 2000
-    });
-  });
+  
+const huh = document.querySelector('.bg')
+const preloader = document.querySelector('.preloader')
+const splitType = document.querySelectorAll('.pas')
 
-    const preloader = gsap.timeline();
-  preloader.to('.counter-two', {
-    delay: 3.5,
-    opacity:0,
-    display: 'none'
-  })
-  preloader.to('.bg-pre', {
-    duration:0.7,
-    scaleY:0,
-    transformOrigin:'bottom',
-  })
-  preloader.to('.preloader', {
-    scaleY:0,
-    transformOrigin:'bottom',
-    display:'none'
-  })
+splitType.forEach((char,i) => {
+  const text = new SplitType(char, { types: 'chars'})
+  gsap.from(text.chars, {
+
+    duration:0.3,
+   opacity:0,
+   y:80,
+   rotateX:-90
+   ,stagger:.01
+    },'<')
+    gsap.to(text.chars, {
+
+      duration:0.3,
+      opacity:0,
+      y:-80,
+      rotateX:90,
+      stagger: .01
+       },'<1')
+})
+gsap.to(huh, {
+  scaleY:0,
+  transformOrigin:'top',
+  delay:6.3
+})
+gsap.to(preloader, {
+  scaleY:0,
+  transformOrigin:'top',
+  delay:6.5
+})
 
   //untuk navbar
   const menuBtn = document.querySelector('.menu');
@@ -263,7 +275,6 @@ splitTypes.forEach((char,i) => {
   const fg = char.dataset.fgColor
 
   const text = new SplitType(char, { types: 'chars'})
-
   gsap.fromTo(text.chars, {
    opacity:0.2
     },
@@ -451,7 +462,7 @@ gsap.from('.line-to-c', 2,{
     trigger: '.apresiasi',
     start: '10% 70%',
     end: '90% bottom',
-    scrub: 0.5
+    scrub: 2
   },
   scaleY:0,
   transformOrigin:'top',
