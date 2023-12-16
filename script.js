@@ -332,7 +332,7 @@ jQuery(document).ready(function( $ ) {
     gsapItems.forEach (gslt => {
         const img = gslt.querySelector('.title_img');
         let widthImg = img.offsetWidth / 2;
-        let heightImg = img.offsetHeight / 2;
+        let heightImg = img.offsetHeight / 1.5;
 
     gslt.addEventListener('mouseenter', function (e) {
         if (e.type === 'mouseenter') {
